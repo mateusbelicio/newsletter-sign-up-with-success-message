@@ -3,15 +3,17 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
 import SuccessMessage from './pages/SuccessMessage';
 
+const baseUrl = '/newsletter-sign-up-with-success-message';
+
 const router = createBrowserRouter([
 	{
-		path: '/',
+		path: `${baseUrl}/`,
 		element: <Home />
 	},
 	{
-		path: '/success-message',
+		path: `${baseUrl}/success-message`,
 		element: <SuccessMessage />
-	}
+	},
 ]);
 
 

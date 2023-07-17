@@ -1,16 +1,20 @@
-import { useEffect, useId, useState } from 'react';
+import { useContext, useEffect, useId, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
+import { EmailContext } from '../../contexts/EmailContext';
 
 import Button from '../Button';
 import InputField from '../InputField';
 import Form from './SubscribeForm.style';
 
 const SubscribeForm = () => {
+	const id = useId();
+	const navigate = useNavigate();
+	const { setEmail } = useContext(EmailContext);
+
 	const [value, setValue] = useState('');
 	const [isDisabled, setIsDisabled] = useState(true);
 	const [error, setError] = useState(false);
-	const id = useId();
-	const navigate = useNavigate();
 
 	const isValidEmail = (email) => {
 		const regexEmail = /^[a-z0-9._]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
@@ -22,7 +26,8 @@ const SubscribeForm = () => {
 		if (!isValidEmail(value)) setError(true);
 		else {
 			setError(false);
-			navigate('/success-message');
+			setEmail(value);
+			navigate('/newsletter-sign-up-with-success-message/success-message');
 		}
 	};
 
