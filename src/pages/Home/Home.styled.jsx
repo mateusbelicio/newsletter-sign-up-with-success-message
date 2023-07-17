@@ -31,10 +31,10 @@ export const Container = styled.div`
   @media ${device.tablet} {
     width: 100%;
     max-width: 58rem;
-    min-height: min-content;
     padding: 1.5rem;
+    min-height: initial;
     
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr max-content;
     row-gap: 0;
 
     border-radius: ${({ theme }) => theme.borderRadius.large};
@@ -51,8 +51,12 @@ export const Content = styled.div`
   padding-inline: 1.5rem;
   padding-bottom: 2.5rem;
 
-  & > :not(:first-child) {
+  & > :where(:not(:first-child)) {
     margin-top: 1.5rem;
+  }
+
+  form {
+    margin-top: 2.5rem;
   }
 
   @media ${device.tablet} {
@@ -68,6 +72,8 @@ export const Picture = styled.picture`
   @media ${device.tablet} {
     order: 2;
     justify-self: end;
+    max-width: 25rem;
+    width: 100%;
   }
 `;
 
