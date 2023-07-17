@@ -1,13 +1,20 @@
-import { useState } from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-function App() {
-	const [count, setCount] = useState(0);
+import Home from './pages/Home';
+import SuccessMessage from './pages/SuccessMessage';
 
-	return (
-		<div>
-        app
-		</div>
-	);
-}
+const router = createBrowserRouter([
+	{
+		path: '/',
+		element: <Home />
+	},
+	{
+		path: '/success-message',
+		element: <SuccessMessage />
+	}
+]);
+
+
+const App = () =>	<RouterProvider router={router} />;
 
 export default App;
