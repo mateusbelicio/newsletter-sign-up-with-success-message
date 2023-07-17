@@ -12,11 +12,13 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     min-height: 100vh;
+    min-width: 20rem;
     text-rendering: optimizeSpeed;
     font-family: ${({ theme }) => theme.typography.type.sans};
     font-size: ${({ theme }) => theme.typography.size.normal};
 
     background-color: ${({ theme }) => theme.colors.backgroundBody};
+    color: ${({ theme }) => theme.colors.text};
   }
 
   h1 {

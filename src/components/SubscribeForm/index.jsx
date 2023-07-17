@@ -1,6 +1,8 @@
 import { useEffect, useId, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import Button from '../Button';
+import InputField from '../InputField';
 
 const SubscribeForm = () => {
 	const [value, setValue] = useState('');
@@ -32,17 +34,17 @@ const SubscribeForm = () => {
 
 	return (
 		<form onSubmit={handleSubmit} noValidate>
-			<label htmlFor={id}>Email address</label>
-			<input 
-				type="email" 
-				name="email" 
-				id={id} 
-				value={value} 
-				onChange={(e) => setValue(e.target.value)}
-				aria-invalid={error}
-				aria-errormessage={`error-${id}`}
+			<InputField 
+				id={id}
+				type={'email'}
+				name={'email'}
+				label={'Email address'}
+				value={value}
+				handleInput={(e) => setValue(e.target.value)}
+				error={error}
+				errorMsg={'Valid email required'}
+				placeholder={'email@company.com'}
 			/>
-			{error && <span id={`error-${id}`}>Valid email required</span>}
 			<Button type="submit" disabled={isDisabled}>
 				Subscribe to monthly newsletter
 			</Button>
