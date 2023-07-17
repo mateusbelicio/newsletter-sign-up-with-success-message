@@ -10,7 +10,8 @@ export const theme = {
 		backgroundFrameInverse: getHSLColor(0, 0, 7),
 		text: getHSLColor(234, 29, 20),
 		textInverse: getHSLColor(0, 0, 100),
-		gray: getHSLColor(234, 28, 13, 0.25)
+		gray: getHSLColor(234, 28, 13, 0.25),
+		grayTint: getHSLColor(0, 0, 70)
 	},
 	gradients: {
 		primary: `linear-gradient(-135deg ,${getHSLColor(14, 100, 61)}, ${getHSLColor(346, 100, 66)})`
@@ -35,6 +36,10 @@ export const theme = {
 			medium: '1.5rem',
 			large: '2.5rem',
 			xLarge: '3.5rem'
+		},
+		weight: {
+			normal: 400,
+			bold: 700
 		}
 	}
 };

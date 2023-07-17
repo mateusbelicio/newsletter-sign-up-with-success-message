@@ -1,5 +1,6 @@
 import { useEffect, useId, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Button from '../Button';
 
 const SubscribeForm = () => {
 	const [value, setValue] = useState('');
@@ -10,7 +11,7 @@ const SubscribeForm = () => {
 
 	const isValidEmail = (email) => {
 		const regexEmail = /^[a-z0-9._]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i;
-		return regexEmail.test(email);
+		return regexEmail.test(email.trim());
 	};
 
 	const handleSubmit = (e) => {
@@ -42,7 +43,9 @@ const SubscribeForm = () => {
 				aria-errormessage={`error-${id}`}
 			/>
 			{error && <span id={`error-${id}`}>Valid email required</span>}
-			<button type="submit" disabled={isDisabled}>Subscribe to monthly newsletter</button>
+			<Button type="submit" disabled={isDisabled}>
+				Subscribe to monthly newsletter
+			</Button>
 		</form>
 	);
 };
