@@ -2,8 +2,6 @@ import { createGlobalStyle } from 'styled-components';
 import { device } from './Theme';
 
 export const GlobalStyles = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=League+Spartan:wght@300;400;500;600;700;800;900&family=Roboto:wght@400;700&display=swap');
-
   *,
   *::before,
   *::after {
