@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 
 import Button from '../Button';
 import InputField from '../InputField';
+import Form from './SubscribeForm.style';
 
 const SubscribeForm = () => {
 	const [value, setValue] = useState('');
@@ -33,7 +34,7 @@ const SubscribeForm = () => {
 	}, [value]);
 
 	return (
-		<form onSubmit={handleSubmit} noValidate>
+		<Form onSubmit={handleSubmit} noValidate autoComplete='off'>
 			<InputField 
 				id={id}
 				type={'email'}
@@ -48,7 +49,7 @@ const SubscribeForm = () => {
 			<Button type="submit" disabled={isDisabled}>
 				Subscribe to monthly newsletter
 			</Button>
-		</form>
+		</Form>
 	);
 };
 
