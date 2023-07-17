@@ -18,6 +18,7 @@ export const theme = {
 	},
 	shadows: {
 		smooth: `0 1.5rem 2rem 0 ${getHSLColor(0, 0, 0, 0.1)}`,
+		default: `0 1rem 3.75rem 0 ${getHSLColor(0, 0, 0, 0.25)}`,
 		accent: `0 1.5rem 2rem 0 ${getHSLColor(4, 100, 67, 0.5)}`
 	},
 	borderRadius: {
@@ -46,7 +47,7 @@ export const theme = {
 
 // MEDIA QUERY CONFIG
 const size = {
-	mobile: 320,
+	mobile: 375,
 	tablet: 768,
 	laptop: 1024,
 	desktop: 1440,

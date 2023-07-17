@@ -2,34 +2,26 @@ import styled from 'styled-components';
 
 export const StyledButton = styled.button`
   display: inline-block;
-  position: relative;
   cursor: pointer;
   overflow: hidden;
 
   color: ${({ theme }) => theme.colors.textInverse};
-  background: ${({ theme }) => theme.colors.text};
+  background-image: ${({ theme }) => `linear-gradient(${theme.colors.text}, ${theme.colors.text})`};
   font-weight: ${({ theme }) => theme.typography.weight.bold};
   line-height: 1;
   text-align: center;
+  z-index: 2;
   
   padding: 1.25rem 2.5rem;
   border-radius: ${({ theme }) => theme.borderRadius.default};
   border: none;
 
-  transition: background-color 0.2s, box-shadow 0.2s;
-
-  &:not(:disabled)::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: ${({ theme }) => theme.gradients.primary};
-    z-index: -1;
-  }
+  transition: background-image 1s ease-out, box-shadow 0.5s ease-out;
 
   &:hover:not(:disabled),
   &:focus-visible {
     box-shadow: ${({ theme }) => theme.shadows.accent};
-    background-color: transparent;
+    background-image: ${({ theme }) => theme.gradients.primary};
   }
 
   &:disabled {

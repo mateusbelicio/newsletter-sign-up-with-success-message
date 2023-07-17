@@ -10,12 +10,17 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  #root {
+    min-height: 100vh;
+  }
+
   body {
     min-height: 100vh;
     min-width: 20rem;
     text-rendering: optimizeSpeed;
     font-family: ${({ theme }) => theme.typography.type.sans};
     font-size: ${({ theme }) => theme.typography.size.normal};
+    line-height: 1.5;
 
     background-color: ${({ theme }) => theme.colors.backgroundBody};
     color: ${({ theme }) => theme.colors.text};
@@ -23,6 +28,7 @@ export const GlobalStyles = createGlobalStyle`
 
   h1 {
     font-size: ${({ theme }) => theme.typography.size.large};
+    line-height: 1;
 
     @media ${device.tablet} {
       font-size: ${({ theme }) => theme.typography.size.xLarge};
